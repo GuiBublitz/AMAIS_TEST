@@ -1,0 +1,31 @@
+<header class="p-3 text-bg-dark">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none me-5">
+                <span class="navbar-brand ms-2">Cadastro de Currículos</span>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 text-white"><u>Home</u></a></li>
+                {{#if isAuthenticated}}
+                    <li><a href="admin" class="nav-link px-2 text-white"><u>Admin Page</u></a></li>
+                {{/if}}                
+            </ul>
+
+            <div class="text-end">
+                {{#if isAuthenticated}}
+                    <div class="d-flex gap-5 align-items-center">
+                        <div class="text-white">
+                            Bem Vindo <strong>{{user.nome}}</strong>
+                        </div>
+                        <a href="logout">
+                            <button class="btn btn-outline-light me-4" type="button">SAIR</button>
+                        </a>
+                    </div>
+                {{else}}
+                    <button type="button" class="btn btn-outline-light me-2" onclick="location.href='login'">ENTRAR</button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</header>
